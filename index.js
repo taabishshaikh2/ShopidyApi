@@ -4,7 +4,7 @@ const cors = require('cors');
 const port = 3000;
 
 const corsOptions = {
-    origin: "*", // Allow all origins or specify a domain like 'http://example.com'
+    origin: "*", // Allow all origins 
     credentials: true, // Allow credentials like cookies
     allowedHeaders: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
@@ -13,6 +13,7 @@ const corsOptions = {
   // Use CORS middleware with custom options
   app.use(cors(corsOptions));
 
+  app.use(express.json())
 
   const products = {
     "Hair Growth": [
