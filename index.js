@@ -21,18 +21,21 @@ const corsOptions = {
 
   const products = {
     "Hair Growth": [
-      { id: 1, name: "Shampoo", price: "Rs.10", image: '/images/shampoo.webp' },
-      { id: 2, name: "Hair Oil", price: "Rs.15", image: '/images/hairoil.webp' },
-      { id: 3, name: "Conditioner", price: "Rs.12", image: '/images/conditioner.webp' },
-      { id: 4, name: "Hair Mask", price: "Rs.20", image: '/images/mask.webp' },
+      { id: 1, name: "Shampoo", price: "Rs.10", image: 'https://shopidy-api.vercel.app/images/shampoo.webp' },
+      { id: 2, name: "Hair Oil", price: "Rs.15", image: 'https://shopidy-api.vercel.app/images/hairoil.webp' },
+      { id: 3, name: "Conditioner", price: "Rs.12", image: 'https://shopidy-api.vercel.app/images/conditioner.webp' },
+      { id: 4, name: "Hair Mask", price: "Rs.20", image: 'https://shopidy-api.vercel.app/images/mask.webp' },
     ],
     "Face Wash": [
-      { id: 5, name: "Gentle Cleanser", price: "Rs.8", image: '/images/celanser.webp' },
-      { id: 6, name: "Foaming Face Wash", price: "Rs.10", image: '/images/foamingfacewash.webp' },
-      { id: 7, name: "Exfoliating Face Wash", price: "Rs.12", image: '/images/facewash.webp' },
-      { id: 8, name: "Hydrating Face Wash", price: "Rs.14", image: '/images/hydratingfacewash.webp' },
+      { id: 5, name: "Gentle Cleanser", price: "Rs.8", image: 'https://shopidy-api.vercel.app/images/celanser.webp' },
+      { id: 6, name: "Foaming Face Wash", price: "Rs.10", image: 'https://shopidy-api.vercel.app/images/foamingfacewash.webp' },
+      { id: 7, name: "Exfoliating Face Wash", price: "Rs.12", image: 'https://shopidy-api.vercel.app/images/facewash.webp' },
+      { id: 8, name: "Hydrating Face Wash", price: "Rs.14", image: 'https://shopidy-api.vercel.app/images/hydratingfacewash.webp' },
     ],
   };
+  
+  console.log(path.join(__dirname, 'public/images'));
+
 // endpoint 1: Tips for Shopify Store Owners
 app.get('/api/tips', (req, res) => {
     res.json({
