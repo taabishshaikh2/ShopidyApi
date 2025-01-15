@@ -21,16 +21,16 @@ const corsOptions = {
 
   const products = {
     "Hair Growth": [
-      { id: 1, name: "Shampoo", price: "Rs.10", image: '/public/images/shampoo.webp' },
-      { id: 2, name: "Hair Oil", price: "Rs.15", image: '/public/images/hairoil.webp' },
-      { id: 3, name: "Conditioner", price: "Rs.12", image: '/public/images/conditioner.webp' },
-      { id: 4, name: "Hair Mask", price: "Rs.20", image: '/public/images/mask.webp' },
+      { id: 1, name: "Shampoo", price: "Rs.10", image: '/images/shampoo.webp' },
+      { id: 2, name: "Hair Oil", price: "Rs.15", image: '/images/hairoil.webp' },
+      { id: 3, name: "Conditioner", price: "Rs.12", image: '/images/conditioner.webp' },
+      { id: 4, name: "Hair Mask", price: "Rs.20", image: '/public/mask.webp' },
     ],
     "Face Wash": [
-      { id: 5, name: "Gentle Cleanser", price: "Rs.8", image: '/public/images/celanser.webp' },
-      { id: 6, name: "Foaming Face Wash", price: "Rs.10", image: '/public/images/foamingfacewash.webp' },
-      { id: 7, name: "Exfoliating Face Wash", price: "Rs.12", image: '/public/images/facewash.webp' },
-      { id: 8, name: "Hydrating Face Wash", price: "Rs.14", image: '/public/images/hydratingfacewash.webp' },
+      { id: 5, name: "Gentle Cleanser", price: "Rs.8", image: '/images/celanser.webp' },
+      { id: 6, name: "Foaming Face Wash", price: "Rs.10", image: '/images/foamingfacewash.webp' },
+      { id: 7, name: "Exfoliating Face Wash", price: "Rs.12", image: '/images/facewash.webp' },
+      { id: 8, name: "Hydrating Face Wash", price: "Rs.14", image: '/images/hydratingfacewash.webp' },
     ],
   };
 // endpoint 1: Tips for Shopify Store Owners
