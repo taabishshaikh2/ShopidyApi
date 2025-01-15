@@ -14,27 +14,42 @@ const corsOptions = {
   app.use(cors(corsOptions));
 
 
+  const products = {
+    "Hair Growth": [
+      { id: 1, name: "Shampoo", price: "Rs.10" },
+      { id: 2, name: "Hair Oil", price: "Rs.15" },
+      { id: 3, name: "Conditioner", price: "Rs.12" },
+      { id: 4, name: "Hair Mask", price: "Rs.20" },
+    ],
+    "Face Wash": [
+      { id: 5, name: "Gentle Cleanser", price: "Rs.8" },
+      { id: 6, name: "Foaming Face Wash", price: "Rs.10" },
+      { id: 7, name: "Exfoliating Face Wash", price: "Rs.12" },
+      { id: 8, name: "Hydrating Face Wash", price: "Rs.14" },
+    ],
+  };
 // endpoint 1: Tips for Shopify Store Owners
 app.get('/api/tips', (req, res) => {
     res.json({
         tips: [
             "Optimize your store's SEO.",
             "Provide detailed product descriptions.",
-            "Offer free shipping for orders above $50."
+            "Offer free shipping for orders above Rs.50."
         ]
     });
 });
 
 // endpoint 2: List of Recommended Products
-app.get('/api/products', (req, res) => {
-    res.json({
-        products: [
-            { id: 1, name: 'Wireless Mouse', price: '$25' },
-            { id: 2, name: 'Mechanical Keyboard', price: '$75' },
-            { id: 3, name: 'Gaming Headset', price: '$45' }
-        ]
-    });
-});
+app.get("/api/products", (req, res) => {
+    const category = req.query.category;
+  
+    if (category && products[category]) {
+      res.json(products[category]);
+    } else {
+      res.json({ error: "Category not found or not provided" });
+    }
+  });
+
 
 // endpoint 3: Shopify Store Announcements
 app.get('/api/announcements', (req, res) => {
@@ -42,7 +57,7 @@ app.get('/api/announcements', (req, res) => {
         announcements: [
             "End-of-Season Sale starts next week!",
             "New arrivals launching tomorrow.",
-            "Free shipping on all orders over $100."
+            "Free shipping on all orders over Rs.100."
         ]
     });
 });
