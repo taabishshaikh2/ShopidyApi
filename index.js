@@ -1,6 +1,9 @@
 const express = require('express');
-const app = express();
+const path = require('path'); 
 const cors = require('cors'); 
+
+const app = express();
+
 const port = 3000;
 
 const corsOptions = {
@@ -14,19 +17,20 @@ const corsOptions = {
   app.use(cors(corsOptions));
 
   app.use(express.json())
+  app.use('/images',express.static(path.join(__dirname, 'public/images')))
 
   const products = {
     "Hair Growth": [
-      { id: 1, name: "Shampoo", price: "Rs.10" },
-      { id: 2, name: "Hair Oil", price: "Rs.15" },
-      { id: 3, name: "Conditioner", price: "Rs.12" },
-      { id: 4, name: "Hair Mask", price: "Rs.20" },
+      { id: 1, name: "Shampoo", price: "Rs.10", image: '/public/images/shampoo.webp' },
+      { id: 2, name: "Hair Oil", price: "Rs.15", image: '/public/images/hairoil.webp' },
+      { id: 3, name: "Conditioner", price: "Rs.12", image: '/public/images/conditioner.webp' },
+      { id: 4, name: "Hair Mask", price: "Rs.20", image: '/public/images/mask.webp' },
     ],
     "Face Wash": [
-      { id: 5, name: "Gentle Cleanser", price: "Rs.8" },
-      { id: 6, name: "Foaming Face Wash", price: "Rs.10" },
-      { id: 7, name: "Exfoliating Face Wash", price: "Rs.12" },
-      { id: 8, name: "Hydrating Face Wash", price: "Rs.14" },
+      { id: 5, name: "Gentle Cleanser", price: "Rs.8", image: '/public/images/celanser.webp' },
+      { id: 6, name: "Foaming Face Wash", price: "Rs.10", image: '/public/images/foamingfacewash.webp' },
+      { id: 7, name: "Exfoliating Face Wash", price: "Rs.12", image: '/public/images/facewash.webp' },
+      { id: 8, name: "Hydrating Face Wash", price: "Rs.14", image: '/public/images/hydratingfacewash.webp' },
     ],
   };
 // endpoint 1: Tips for Shopify Store Owners
