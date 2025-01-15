@@ -24,7 +24,7 @@ const corsOptions = {
       { id: 1, name: "Shampoo", price: "Rs.10", image: '/images/shampoo.webp' },
       { id: 2, name: "Hair Oil", price: "Rs.15", image: '/images/hairoil.webp' },
       { id: 3, name: "Conditioner", price: "Rs.12", image: '/images/conditioner.webp' },
-      { id: 4, name: "Hair Mask", price: "Rs.20", image: '/public/mask.webp' },
+      { id: 4, name: "Hair Mask", price: "Rs.20", image: '/images/mask.webp' },
     ],
     "Face Wash": [
       { id: 5, name: "Gentle Cleanser", price: "Rs.8", image: '/images/celanser.webp' },
