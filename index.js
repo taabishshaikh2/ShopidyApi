@@ -70,6 +70,44 @@ app.get('/api/announcements', (req, res) => {
     });
 });
 
+const deliveryEstimates = {
+  "400001": "3-5 days", // Mumbai
+  "400059": "3-5 days", // Mumbai
+  "400080": "3-5 days", // Mumbai
+  "110001": "5-7 days", // Delhi
+  "110085": "5-7 days", // Delhi
+  "110092": "5-7 days", // Delhi
+  "560001": "7-10 days", // Bangalore
+  "560034": "7-10 days", // Bangalore
+  "560100": "7-10 days", // Bangalore
+  "411001": "4-6 days", // Pune
+  "411038": "4-6 days", // Pune
+  "411057": "4-6 days"  // Pune
+};
+// Endpoint for estimated delivery time
+app.post('/api/delivery-estimate', (req, res) => {
+  const { pincode } = req.body;
+
+  // Validate the input
+  if (!pincode) {
+    return res.status(400).json({ error: "Pincode is required" });
+  }
+
+  // Find delivery estimate for the given pincode
+  const deliveryTime = deliveryEstimates[pincode];
+
+  if (!deliveryTime) {
+    return res
+      .status(404)
+      .json({ error: "Delivery information not available for this pincode" });
+  }
+
+  res.json({
+    pincode,
+    estimatedDeliveryTime: deliveryTime,
+  });
+});
+
 
 // Start server
 app.listen(port, () => {
