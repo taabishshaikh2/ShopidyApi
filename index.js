@@ -55,7 +55,8 @@ app.get('/api/announcements', (req, res) => {
         announcements: [
             "End-of-Season Sale starts next week!",
             "New arrivals launching tomorrow.",
-            "Free shipping on all orders over Rs.100."
+            "Free shipping on all orders over Rs.100.",
+            "BUY ANY 2 @ ₹649"
         ]
     });
 });
