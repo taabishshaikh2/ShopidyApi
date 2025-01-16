@@ -85,15 +85,13 @@ const deliveryEstimates = {
   "411057": "4-6 days"  // Pune
 };
 // Endpoint for estimated delivery time
-app.post('/api/delivery-estimate', (req, res) => {
-  const { pincode } = req.body;
+app.get('/api/delivery-estimate', (req, res) => {
+  const pincode = req.query.pincode; // Extract pincode from query parameters
 
-  // Validate the input
   if (!pincode) {
     return res.status(400).json({ error: "Pincode is required" });
   }
 
-  // Find delivery estimate for the given pincode
   const deliveryTime = deliveryEstimates[pincode];
 
   if (!deliveryTime) {
