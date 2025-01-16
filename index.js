@@ -21,33 +21,23 @@ const corsOptions = {
 
   const products = {
     "Hair Growth": [
-      { id: 1, name: "Shampoo", price: "Rs.10", image: 'https://shopidy-api.vercel.app/images/shampoo.webp' },
-      { id: 2, name: "Hair Oil", price: "Rs.15", image: 'https://shopidy-api.vercel.app/images/hairoil.webp' },
-      { id: 3, name: "Conditioner", price: "Rs.12", image: 'https://shopidy-api.vercel.app/images/conditioner.webp' },
-      { id: 4, name: "Hair Mask", price: "Rs.20", image: 'https://shopidy-api.vercel.app/images/mask.webp' },
+      { id: 1, name: "Shampoo", price: "₹599", image: 'https://shopidy-api.vercel.app/images/shampoo.webp' },
+      { id: 2, name: "Hair Oil", price: "₹299", image: 'https://shopidy-api.vercel.app/images/hairoil.webp' },
+      { id: 3, name: "Conditioner", price: "₹549", image: 'https://shopidy-api.vercel.app/images/conditioner.webp' },
+      { id: 4, name: "Hair Mask", price: "₹249", image: 'https://shopidy-api.vercel.app/images/mask.webp' },
     ],
     "Face Wash": [
-      { id: 5, name: "Gentle Cleanser", price: "Rs.8", image: 'https://shopidy-api.vercel.app/images/celanser.webp' },
-      { id: 6, name: "Foaming Face Wash", price: "Rs.10", image: 'https://shopidy-api.vercel.app/images/foamingfacewash.webp' },
-      { id: 7, name: "Exfoliating Face Wash", price: "Rs.12", image: 'https://shopidy-api.vercel.app/images/facewash.webp' },
-      { id: 8, name: "Hydrating Face Wash", price: "Rs.14", image: 'https://shopidy-api.vercel.app/images/hydratingfacewash.webp' },
+      { id: 5, name: "Gentle Cleanser", price: "₹399", image: 'https://shopidy-api.vercel.app/images/celanser.webp' },
+      { id: 6, name: "Foaming Face Wash", price: "₹349", image: 'https://shopidy-api.vercel.app/images/foamingfacewash.webp' },
+      { id: 7, name: "Exfoliating Face Wash", price: "₹699", image: 'https://shopidy-api.vercel.app/images/facewash.webp' },
+      { id: 8, name: "Hydrating Face Wash", price: "₹749", image: 'https://shopidy-api.vercel.app/images/hydratingfacewash.webp' },
     ],
   };
   
   console.log(path.join(__dirname, 'public/images'));
 
-// endpoint 1: Tips for Shopify Store Owners
-app.get('/api/tips', (req, res) => {
-    res.json({
-        tips: [
-            "Optimize your store's SEO.",
-            "Provide detailed product descriptions.",
-            "Offer free shipping for orders above Rs.50."
-        ]
-    });
-});
 
-// endpoint 2: List of Recommended Products
+// endpoint 1: List of Recommended Products
 app.get("/api/products", (req, res) => {
     const category = req.query.category;
   
@@ -59,7 +49,7 @@ app.get("/api/products", (req, res) => {
   });
 
 
-// endpoint 3: Shopify Store Announcements
+// endpoint 2: Shopify Store Announcements
 app.get('/api/announcements', (req, res) => {
     res.json({
         announcements: [
@@ -84,9 +74,9 @@ const deliveryEstimates = {
   "411038": "4-6 days", // Pune
   "411057": "4-6 days"  // Pune
 };
-// Endpoint for estimated delivery time
+// endpoint 3: estimated delivery time
 app.get('/api/delivery-estimate', (req, res) => {
-  const pincode = req.query.pincode; // Extract pincode from query parameters
+  const pincode = req.query.pincode; 
 
   if (!pincode) {
     return res.status(400).json({ error: "Pincode is required" });
